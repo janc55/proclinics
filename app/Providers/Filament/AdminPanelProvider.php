@@ -40,6 +40,13 @@ class AdminPanelProvider extends PanelProvider
                 Widgets\AccountWidget::class,
                 Widgets\FilamentInfoWidget::class,
             ])
+            ->navigationGroups([
+                'Principal',
+                'Citas Médicas',
+                'Clínica',
+                'Centro de Imagenología',
+                'Laboratorio Clínico',
+            ])
             ->middleware([
                 EncryptCookies::class,
                 AddQueuedCookiesToResponse::class,

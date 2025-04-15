@@ -21,6 +21,10 @@ class AppointmentResource extends Resource
 {
     protected static ?string $model = Appointment::class;
 
+    protected static ?string $navigationGroup = 'Citas Médicas';
+    
+    protected static ?string $navigationLabel = 'Citas';
+
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
 
     public static function form(Form $form): Form
