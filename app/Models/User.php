@@ -21,6 +21,8 @@ class User extends Authenticatable
      */
     protected $fillable = [
         'name',
+        'last_name',
+        'document_number',
         'email',
         'password',
     ];
@@ -55,5 +57,15 @@ class User extends Authenticatable
     public function patientProfile()
     {
         return $this->hasOne(Patient::class);
+    }
+
+    public function doctor()
+    {
+        return $this->hasOne(Doctor::class);
+    }
+
+    public function getFullNameAttribute(): string
+    {
+        return "{$this->name} {$this->last_name}";
     }
 }
